@@ -8,7 +8,14 @@
         <p>
             @foreach (var column in ViewBag.columns)
             {
-                @if (column.Key == "all")
+                @if (ViewBag.searchType != null)
+                {
+                    <span>
+                        <input type="radio" name="searchType" id="@column.Key" value="@column.Key" checked />
+                        <label for="@column.Key">@column.Value</label>
+                    </span>
+                }
+                else if (column.Key == "all")
                 {
                     <span>
                         <input type="radio" name="searchType" id="@column.Key" value="@column.Key" checked />

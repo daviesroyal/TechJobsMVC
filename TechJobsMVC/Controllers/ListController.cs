@@ -52,7 +52,7 @@ namespace TechJobsMVC.Controllers
             else
             {
                 jobs = JobData.FindByColumnAndValue(column, value);
-                ViewBag.title = "Jobs with " + ColumnChoices[column] + ": " + value;
+                ViewBag.title = $"Jobs with {ColumnChoices[column]}: {value}";
             }
             ViewBag.jobs = jobs;
 
